@@ -1,6 +1,6 @@
 {
     "source": "content",
-    "output": "_site",
+    "output": "../../frozen-pages",
     "theme": "_theme",
     "permalink": "{{directory}}/{{filename}}.html",
     "writers": [
