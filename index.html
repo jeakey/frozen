@@ -1,85 +1,280 @@
-<<<<<<< HEAD
-My GitHub Page
-=======
-<!DOCTYPE html>
-<html>
-  <head>
-    <meta charset='utf-8'>
-    <meta http-equiv="X-UA-Compatible" content="chrome=1">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <link href='https://fonts.googleapis.com/css?family=Architects+Daughter' rel='stylesheet' type='text/css'>
-    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
-    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Baseui</title>
+    <link rel="icon" href="./static/css/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="./static/css/normalize.css" />
+    <link rel="stylesheet" href="./static/css/solarized.css" />
+    <link rel="stylesheet" href="./static/css/site.css" />
+    <link rel="stylesheet" href="./static/css/style.css" />
+    <link rel="stylesheet" href="./static/google-code-prettify/prettify.css" />
+    <link rel="stylesheet" href="./static/css/tomorrow.css" />
+    <link rel="stylesheet" href="./static/css/frozen-debug.css" />
+     
+    
+<style type="text/css">
+  pre.prettyprint {
+      margin: 6px 0;
+      overflow: auto;
+      padding: 6px 10px;
+      white-space: pre;
+  }
+  #sidenav {
+      margin: 0 40px 20px 20px;
+      padding: 0;
+      border-radius: 5px;
+      background-color: #fff; 
+  }
+  #sidenav li a {
+      display: block;
+      padding: 10px 0 10px 20px;
+      border-bottom: 1px solid #eee;
+      font-size: 16px;
+  }
+  #sidenav li:first-child a{
+      border-radius: 5px 5px 0 0;
+  }
+  #sidenav li:last-child a{
+      border-radius: 0 0 5px 5px; 
+      border-bottom: none;
+  }
+  #sidenav li a:hover,
+  #sidenav li.active a {
+      text-decoration: none;
+      color: #fff;
+      background-color: #6C97C2;
+  }
+  .handy-module {
+      margin: 10px 0 20px; 
+  }
+  .handy-module-demo {
+      position: relative;
+      margin: 10px 0 20px;
+      padding: 40px 20px 20px;
+      overflow: hidden;
+      border: 1px solid #eee;
+      background-color: #fff;
+  }
+  .handy-module-subtitle {
+      position: absolute;
+      top: 0;
+      left: 0;
+      border-radius: 3px;
+      margin: 0;
+      color: #777;
+      font-size: 12px;
+      background: #F8F8F8;
+      border-bottom: 1px solid #ddd;
+      border-right: 1px solid #ddd;
+      display: block;
+      font-size: 12px;
+      width: 150px;
+      padding: 5px 10px;
+      opacity: 0.8;
+  }
 
-    <!--[if lt IE 9]>
-    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-    <![endif]-->
+  .demo {
+    padding:1rem;
+    color:#fff;
+    background-color:#6C97C2;
+  }
+    .ui-btn-group, .ui-dialog,.ui-tips{
+        position: static;
+        margin: 20px 0;
+    }
 
-    <title>Frozen by QQVIPTeam</title>
-  </head>
+	.ui-icon{font-size:30px;}
+	.ui-table{line-height: 40px;}
+</style>
 
-  <body>
-    <header>
-      <div class="inner">
-        <h1>Frozen</h1>
-        <h2>css组件</h2>
-        <a href="https://github.com/QQVIPTeam/frozen" class="button"><small>View project on</small>GitHub</a>
-      </div>
-    </header>
+</head>
+<body>
+<div id="body-wrapper">
 
-    <div id="content-wrapper">
-      <div class="inner clearfix">
-        <section id="main-content">
-          <h1>
-<a name="frozen" class="anchor" href="#frozen"><span class="octicon octicon-link"></span></a>frozen</h1>
-
-<h4>
-<a name="css%E7%BB%84%E4%BB%B6" class="anchor" href="#css%E7%BB%84%E4%BB%B6"><span class="octicon octicon-link"></span></a>css组件</h4>
-
-<h3>
-<a name="%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE" class="anchor" href="#%E5%B7%A5%E5%85%B7%E9%85%8D%E7%BD%AE"><span class="octicon octicon-link"></span></a>工具配置</h3>
-
-<p>需要提前安装nodejs，npm，spm2.X，nico</p>
-
-<p>参考<a href="http://aralejs.org/docs/installation.html">http://aralejs.org/docs/installation.html</a></p>
-
-<h3>
-<a name="%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8" class="anchor" href="#%E5%A6%82%E4%BD%95%E4%BD%BF%E7%94%A8"><span class="octicon octicon-link"></span></a>如何使用</h3>
-
-<ol>
-<li><p><code>spm build</code>  生成dist中的frozen.css</p></li>
-<li><p><code>cd  nico</code> 进入nico目录</p></li>
-<li>
-<p><code>make</code> 命令，这时可以看到在当前目录下生成了一个 _site 文件夹，index.html即是我们需要生成的文档页面
-或者使用 <code>cp ../dist/* _theme/static/css/</code> 和 <code>nico build</code>来替代</p>
-
-<ol>
-<li> 执行<code>nico server</code> ，开启本地服务，用来预览文档，调试，访问<a href="http://127.0.0.1:8000/">http://127.0.0.1:8000/</a>
-</li>
-</ol>
-</li>
-</ol>
-        </section>
-
-        <aside id="sidebar">
-          <a href="https://github.com/QQVIPTeam/frozen/zipball/master" class="button">
-            <small>Download</small>
-            .zip file
-          </a>
-          <a href="https://github.com/QQVIPTeam/frozen/tarball/master" class="button">
-            <small>Download</small>
-            .tar.gz file
-          </a>
-
-          <p class="repo-owner"><a href="https://github.com/QQVIPTeam/frozen"></a> is maintained by <a href="https://github.com/QQVIPTeam">QQVIPTeam</a>.</p>
-
-          <p>This page was generated by <a href="https://pages.github.com">GitHub Pages</a> using the Architect theme by <a href="https://twitter.com/jasonlong">Jason Long</a>.</p>
-        </aside>
-      </div>
+<div id="title-wrapper">
+    <h1 id="title" class="inline"><a href="./">Frozen</a></h1>
+    <p id="description"></p>
+</div>
+<div id="main-wrapper">
+    <div class="main-block" id="document-wrapper">
+        <ul id="sidenav">
+        
+ 
+        <li><a href="#handy-module-atom">atom</a></li>
+        
+ 
+ 
+ 
+ 
+        <li><a href="#handy-module-ui-btn-group">ui-btn-group</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-btn-lg">ui-btn-lg</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-btn">ui-btn</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-dialog">ui-dialog</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-icon-vip">ui-icon-vip</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-icon">ui-icon</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-list">ui-list</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-loading">ui-loading</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-notice">ui-notice</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-tab">ui-tab</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-table">ui-table</a></li>
+        
+ 
+ 
+        <li><a href="#handy-module-ui-tips">ui-tips</a></li>
+        
+ 
+        </ul>
     </div>
+    <div class="main-block" id="module-wrapper">
+        <div class="handy-modules"></div>
+    </div>
+</div>
+<div id="footer-wrapper">
+  <footer>
+    <p class="powered">
+        <a href="http://aralejs.org">Arale</a> •
+        <a href="http://aliceui.org">Alice</a> •
+        <a href="http://seajs.org">SeaJS</a> •
+        <a href="https://github.com/spmjs/spm">spm</a> •
+    </p>
+  </footer>
+</div>
 
-  
-  </body>
+<script type="text/template" id="handy-module-demo">
+    <div class="handy-module-demo">
+        <h3 class="handy-module-subtitle">Default</h3>
+        <div class="handy-module-dom"></div>
+        <pre class="handy-module-code prettyprint"></pre>
+    </div>
+</script>
+<script type="text/javascript" src="./static/google-code-prettify/prettify.js"></script>
+<script type="text/javascript" src="http://static.alipayobjects.com/seajs/1.3.1/sea.js"></script>
+<script type="text/javascript">
+(function(){
+    seajs.config({
+        base: 'http://static.alipayobjects.com',
+        alias: {
+            '$': 'gallery/jquery/1.8.2/jquery',
+            'fixed': 'arale/fixed/1.0.0/fixed'
+        },
+        preload: ['seajs/plugin-combo'],
+    });
+    seajs.use(['$', 'fixed'], function($, Fixed) {
+        Fixed('#document-wrapper');
+
+        var handyComponents = $('#sidenav li'); 
+        $.each(handyComponents, function(i, item){
+            var name = $(item).find('a').html(),
+                id = 'handy-module-' + name;
+
+            var module = $('<div class="handy-module"><h2><a href="#"></a></h2></div>');
+            module.attr('id', id)
+                .appendTo('.handy-modules');
+            $.ajax({
+                url: name + '.html',
+                dataType: 'html',
+                success: function(content) {
+                    content = $(content);
+                    var name = content.find('.handy-module-title').html();
+                    module.find('h2 > a').html(name)
+                        .attr('href', name.toLowerCase() +'.html');
+                    content.find('.nico-insert-code').each(function(i, item){
+                        item = $(item);
+
+                        var demo = $($('#handy-module-demo').html()),
+                            subtitle = item.prev().html(),
+                            html = item.html();
+
+                        demo.find('.handy-module-subtitle').html(subtitle);
+                        demo.find('.handy-module-dom').html(html);
+                        demo.find('.handy-module-code').html(HtmlToCode(html));
+                        demo.appendTo(module);
+                    });
+                }
+            }); 
+        });
+        function HtmlToCode(html) {
+            var code = html;
+            code = code.replace(/</g, '&lt;').replace(/>/g, '&gt;');
+            code = code.replace(/^\s*\n/, '').replace(/\n\s*$/, '');
+            code = PR.prettyPrintOne(code, 'html', false);
+            return code;
+        }
+
+        // side
+
+        var titles = $('.handy-modules h2');
+        var doc = $(document);
+        if (titles.length <= 0) {
+            return;
+        }
+
+        $(window).scroll(function() {
+            var top = doc.scrollTop(), i;
+            if (top >= doc.height()- $(window).height() - 20) {
+                i = titles.length - 1;
+            } else {
+                for (i=0; i<titles.length; i++) {
+                    if (top < titles.eq(i).offset().top - 20) {  
+                        break;
+                    }
+                }
+                i--;
+                i = (i<0) ? 0 : i;
+            }
+            $('#sidenav .active').removeClass('active');
+            $('#sidenav li').eq(i).addClass('active');
+        });
+    })
+})();
+</script>
+</div>
+<script type="text/javascript">
+window.addEventListener('load', function () {
+  var interval = 500, begin = Date.now(), img = new Image(), timer = setTimeout(handler, interval);
+  window.removeEventListener('load', arguments.callee);
+  img.addEventListener('load', handler, false);
+  img.src = 'https://i.alipayobjects.com/e/201305/Q9jNoeIir.gif?t=' + begin;
+ 
+  function handler() {
+    clearTimeout(timer);
+    img.removeEventListener('load', handler);
+    //响应在500ms以内算高速网络 高清（HD）标清（SD）
+    document.body.className = (document.body.className + (Date.now() - begin < interval ? ' ui-hd' : ' ui-sd')).trim();
+  }
+}, false);
+</script>
+</body>
 </html>
->>>>>>> 65c9d5a947d189a382671b5c61ba1897e6c39455
