@@ -3,14 +3,14 @@
   "name": "frozen",
   "version": "1.0.0",
   "description": "The best project ever.",
-  "homepage": "https://github.com/chengfeng/frozen",
+  "homepage": "https://github.com/QQVIPTeam/frozen",
   "author": "faycheng",
   "maintainers": [
     "faycheng"
   ],
   "repository": {
     "type": "git",
-    "url": "git://github.com/chengfeng/frozen.git"
+    "url": "git://github.com/QQVIPTeam/frozen.git"
   },
   "bugs": {
     "url": ""
@@ -19,7 +19,6 @@
   "licenses": "MIT",
   "spm": {
     "output": [
-      "frozen.js",
       "frozen.css"
     ],
     "alias": {},
