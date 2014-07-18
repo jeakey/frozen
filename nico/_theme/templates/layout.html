@@ -1,0 +1,39 @@
+<!DOCTYPE HTML>
+<html lang="en-US">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>{%- block title %}{{theme.name|title}}{% endblock -%}</title>
+    {%- block assets %}
+    <link rel="icon" href="{{static_url('css/favicon.ico')}}" type="image/x-icon" />
+    <link rel="stylesheet" href="{{static_url('css/normalize.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/solarized.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/site.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/style.css')}}" />
+    <link rel="stylesheet" href="{{static_url('google-code-prettify/prettify.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/tomorrow.css')}}" />
+    <link rel="stylesheet" href="{{static_url('css/frozen-debug.css')}}" />
+    {%- endblock %} 
+    {%- block afterstyle %}{%- endblock %}
+</head>
+<body>
+<div id="body-wrapper">
+{%- block content %}{%- endblock %}
+</div>
+<script type="text/javascript">
+window.addEventListener('load', function () {
+  var interval = 500, begin = Date.now(), img = new Image(), timer = setTimeout(handler, interval);
+  window.removeEventListener('load', arguments.callee);
+  img.addEventListener('load', handler, false);
+  img.src = 'https://i.alipayobjects.com/e/201305/Q9jNoeIir.gif?t=' + begin;
+ 
+  function handler() {
+    clearTimeout(timer);
+    img.removeEventListener('load', handler);
+    //响应在500ms以内算高速网络 高清（HD）标清（SD）
+    document.body.className = (document.body.className + (Date.now() - begin < interval ? ' ui-hd' : ' ui-sd')).trim();
+  }
+}, false);
+</script>
+</body>
+</html>

@@ -1,0 +1,29 @@
+{
+  "family": "",
+  "name": "frozen",
+  "version": "1.0.0",
+  "description": "The best project ever.",
+  "homepage": "https://github.com/chengfeng/frozen",
+  "author": "faycheng",
+  "maintainers": [
+    "faycheng"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/chengfeng/frozen.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": [],
+  "licenses": "MIT",
+  "spm": {
+    "output": [
+      "frozen.js",
+      "frozen.css"
+    ],
+    "alias": {},
+    "devAlias": {},
+    "engines": {}
+  }
+}
