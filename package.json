@@ -19,7 +19,7 @@
   "licenses": "MIT",
   "spm": {
     "output": [
-      "frozen.css"
+      "frozen.css","ui-btn.css"
     ],
     "alias": {},
     "devAlias": {},
