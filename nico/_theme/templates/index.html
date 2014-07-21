@@ -33,10 +33,10 @@
       color: #fff;
       background-color: #6C97C2;
   }
-  .handy-module {
+  .frozen-module {
       margin: 10px 0 20px; 
   }
-  .handy-module-demo {
+  .frozen-module-demo {
       position: relative;
       margin: 10px 0 20px;
       padding: 40px 20px 20px;
@@ -44,7 +44,7 @@
       border: 1px solid #eee;
       background-color: #fff;
   }
-  .handy-module-subtitle {
+  .frozen-module-subtitle {
       position: absolute;
       top: 0;
       left: 0;
@@ -74,6 +74,7 @@
 
 	.ui-icon{font-size:30px;}
 	.ui-table{line-height: 40px;}
+	.frozen-module-dom{position: relative;}
 </style>
 {% endblock %}
 
@@ -87,13 +88,13 @@
         <ul id="sidenav">
         {% for item in resource.pages %}
         {% if not item.meta.template %}
-        <li><a href="#handy-module-{{item.title|lower}}">{{item.title|lower}}</a></li>
+        <li><a href="#frozen-module-{{item.title|lower}}">{{item.title|lower}}</a></li>
         {% endif %}
         {% endfor %}
         </ul>
     </div>
     <div class="main-block" id="module-wrapper">
-        <div class="handy-modules"></div>
+        <div class="frozen-modules"></div>
     </div>
 </div>
 <div id="footer-wrapper">
@@ -107,11 +108,11 @@
   </footer>
 </div>
 
-<script type="text/template" id="handy-module-demo">
-    <div class="handy-module-demo">
-        <h3 class="handy-module-subtitle">Default</h3>
-        <div class="handy-module-dom"></div>
-        <pre class="handy-module-code prettyprint"></pre>
+<script type="text/template" id="frozen-module-demo">
+    <div class="frozen-module-demo">
+        <h3 class="frozen-module-subtitle">Default</h3>
+        <div class="frozen-module-dom"></div>
+        <pre class="frozen-module-code prettyprint"></pre>
     </div>
 </script>
 <script type="text/javascript" src="{{static_url('google-code-prettify/prettify.js')}}"></script>
@@ -129,32 +130,32 @@
     seajs.use(['$', 'fixed'], function($, Fixed) {
         Fixed('#document-wrapper');
 
-        var handyComponents = $('#sidenav li'); 
-        $.each(handyComponents, function(i, item){
+        var frozenComponents = $('#sidenav li'); 
+        $.each(frozenComponents, function(i, item){
             var name = $(item).find('a').html(),
-                id = 'handy-module-' + name;
+                id = 'frozen-module-' + name;
 
-            var module = $('<div class="handy-module"><h2><a href="#"></a></h2></div>');
+            var module = $('<div class="frozen-module"><h2><a href="#"></a></h2></div>');
             module.attr('id', id)
-                .appendTo('.handy-modules');
+                .appendTo('.frozen-modules');
             $.ajax({
                 url: name + '.html',
                 dataType: 'html',
                 success: function(content) {
                     content = $(content);
-                    var name = content.find('.handy-module-title').html();
+                    var name = content.find('.frozen-module-title').html();
                     module.find('h2 > a').html(name)
                         .attr('href', name.toLowerCase() +'.html');
                     content.find('.nico-insert-code').each(function(i, item){
                         item = $(item);
 
-                        var demo = $($('#handy-module-demo').html()),
+                        var demo = $($('#frozen-module-demo').html()),
                             subtitle = item.prev().html(),
                             html = item.html();
 
-                        demo.find('.handy-module-subtitle').html(subtitle);
-                        demo.find('.handy-module-dom').html(html);
-                        demo.find('.handy-module-code').html(HtmlToCode(html));
+                        demo.find('.frozen-module-subtitle').html(subtitle);
+                        demo.find('.frozen-module-dom').html(html);
+                        demo.find('.frozen-module-code').html(HtmlToCode(html));
                         demo.appendTo(module);
                     });
                 }
@@ -170,7 +171,7 @@
 
         // side
 
-        var titles = $('.handy-modules h2');
+        var titles = $('.frozen-modules h2');
         var doc = $(document);
         if (titles.length <= 0) {
             return;

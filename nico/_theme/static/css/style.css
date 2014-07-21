@@ -214,7 +214,7 @@ a {
 /* responsive */
 @media (max-width: 768px) {
     #document-wrapper,
-    .handy-module-code {
+    .frozen-module-code {
         display: none;
     }
     #module-wrapper {
